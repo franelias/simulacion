@@ -1,4 +1,4 @@
-function [t,x] = dtsim(f,x0,ti,tf)
+function [t,x] = seirExp(f,x0,ti,tf)
     t=[ti:tf];
     x(:,1)=x0;
     for k=1:length(t)-1
@@ -30,4 +30,4 @@ function x=discreteSEIR2(pre_x,t)
     x=[S;E;I;R;NE];
 endfunction
 
-[t,x] = dtsim(@discreteSEIR2, [1e6-10;10;0;0;[10;zeros(11,1)]], 0,100)
+[t,x] = seirExp(@discreteSEIR2, [1e6-10;10;0;0;[10;zeros(11,1)]], 0,300)

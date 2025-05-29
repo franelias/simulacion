@@ -1,0 +1,69 @@
+Root-Coordinator
+ {
+  Simulator
+   {
+    Path = practica2/fuente.h
+    Parameters = 1.000000e-01,1.200000e-01,2.000000e-02
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 4.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with circles title 'Cola'","with impulses title 'Proc'","with lines title 'Sensor'","with circles title 'Muestreador'",""
+   }
+  Simulator
+   {
+    Path = practica2/proc.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = practica2/cola.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = practica2/sensor.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = practica2/filtro.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = sources\constant_sci.h
+    Parameters = "1"
+   }
+  Simulator
+   {
+    Path = practica2/muestreador.h
+    Parameters = 1.000000e+00
+   }
+  Simulator
+   {
+    Path = 
+    Parameters = 
+   }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+    (0,0);(5,0)
+    (6,0);(5,1)
+    (7,0);(1,3)
+    (2,0);(3,1)
+    (2,0);(1,1)
+    (3,0);(4,1)
+    (3,0);(2,0)
+    (3,0);(1,0)
+    (5,0);(3,0)
+    (5,0);(4,0)
+    (4,0);(1,2)
+    (4,0);(7,0)
+   }
+ }
