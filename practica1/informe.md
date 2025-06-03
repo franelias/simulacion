@@ -56,31 +56,8 @@ Para esta simulación se obtiene un resultado muy parecido al anterior respecto 
 
 ## Problema 4
 
-```matlab
-function x=discreteSEIR2(pre_x,t)
-    N=1e6;
-    pre_S=pre_x(1);
-    pre_E=pre_x(2);
-    pre_I=pre_x(3);
-    pre_R=pre_x(4);
-    pre_NE = pre_x(5:length(pre_x))
+![Fórmulas](./img/salida.jpg)
 
-    TR=length(pre_x)-4
-    TI=3
-    R0=1.5
-
-    NEaux=R0/(TR-TI)*pre_S*pre_I/N
-
-    S = pre_S-NEaux
-    E = pre_E+NEaux-pre_NE(TI)
-    I = pre_I+pre_NE(TI)-pre_NE(TR)
-    R = pre_R+pre_NE(TR)
-
-    NE=[NEaux;pre_NE(1:TR-1)]
-
-    x=[S;E;I;R;NE];
-endfunction
-```
 
 ![Simulación del modelo SEIR discreto con retardos explícitos](./img/problema4.jpg)
 
@@ -112,6 +89,9 @@ Para la simulación con tres poblaciones se repite este comportamiento entre la 
 
 ![Simulación en Modelica del modelo SIR discreto con tres poblaciones](./img/problema6_2.png)
 
+
+Octave, a diferencia de OpenModelica, no pareciera ofrecer facilidades a la hora de componer los modelos a definir. En ese sentido, en OpenModelica, cada unidad podría definirse en un módulo propio e instanciarse con diferentes parámetros. Además, sería más fácil separar la implementación del modelo de la simulación, trazando así mejores abstracciones.
+
 ---
 
 ## Problema 10
@@ -127,3 +107,46 @@ Para la segunda simulación, el robot al principio mueve un poco las ruedas hast
 ![Ángulos del modelo del robot bajo la ley del control](./img/problema10_2ang.png)
 
 ---
+
+--- 
+
+## Apéndice
+
+### Problema 1
+
+{{include: ./code/poblacion.m}}
+
+
+### Problema 2
+
+{{include: ./code/epidemiologico.m}}
+
+El código del ítem 2 es el propuesto en la práctica.
+
+
+### Problema 3
+
+{{include: ./code/seir.m}}
+
+
+### Problema 4
+
+{{include: ./code/seirExp.m}}
+
+
+### Problema 5
+
+{{include: ./code/problema5_discreteSIR.mo}}
+
+{{include: ./code/discreteSEIR.mo}}
+{{include: ./code/discreteSEIRExp.mo}}
+
+### Problema 6
+
+{{include: ./code/twoPopSIR.mo}}
+{{include: ./code/threePopSIR.mo}}
+
+### Problema 10
+
+{{include: ./code/problema10.mo}}
+{{include: ./code/problema102.mo}}
