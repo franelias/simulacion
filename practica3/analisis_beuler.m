@@ -7,4 +7,3 @@ function eigen=analisis_beuler(b,h)
   eigen = eig(Ad);
 endfunction
 
-
