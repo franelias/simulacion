@@ -8,7 +8,7 @@ Root-Coordinator
   Simulator
    {
     Path = sinks/gnuplot.h
-    Parameters = 2.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with lines title 'Sensor'","with lines title 'lref'","","",""
+    Parameters = 4.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with lines title 'Cola'","with impulses title 'Proc'","with lines title 'Sensor'","with lines title '50'",""
    }
   Simulator
    {
@@ -50,12 +50,7 @@ Root-Coordinator
       Simulator
        {
         Path = practica2/pk.h
-        Parameters = 2.000000e-02,5.000000e-04
-       }
-      Simulator
-       {
-        Path = sinks/gnuplot.h
-        Parameters = 3.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with lines title 'p_k'","with circles title 'x_k'","with impulses title 'e_k'","",""
+        Parameters = 2.000000e-02,1.000000e-03
        }
       EIC
        {
@@ -68,22 +63,34 @@ Root-Coordinator
       IC
        {
         (1,0);(2,0)
-        (1,0);(3,1)
-        (0,0);(3,2)
         (0,0);(1,0)
         (0,0);(2,1)
-        (2,0);(3,0)
        }
      }
   Simulator
    {
     Path = sinks/gnuplot.h
-    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with steps title 'Prob'","","","",""
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with steps title 'Cont'","","","",""
    }
   Simulator
    {
     Path = sources\constant_sci.h
     Parameters = "50"
+   }
+  Simulator
+   {
+    Path = practica2/cola.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = practica2/proc.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with circles title 'Cola'","with circles title 'Cola'","","",""
    }
   EIC
    {
@@ -93,17 +100,23 @@ Root-Coordinator
    }
   IC
    {
-    (2,0);(3,1)
     (0,0);(5,0)
     (6,0);(7,0)
-    (9,0);(1,1)
+    (9,0);(1,3)
+    (5,1);(10,0)
+    (11,0);(10,1)
+    (2,0);(3,1)
+    (2,0);(1,1)
     (3,0);(4,1)
     (3,0);(2,0)
+    (3,0);(1,0)
     (5,0);(3,0)
     (5,0);(4,0)
+    (4,0);(1,2)
+    (4,0);(6,0)
+    (10,0);(11,0)
+    (10,0);(12,0)
     (7,0);(8,0)
     (7,0);(5,1)
-    (4,0);(6,0)
-    (4,0);(1,0)
    }
  }

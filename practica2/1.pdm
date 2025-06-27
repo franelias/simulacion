@@ -42,7 +42,7 @@ Coupled
         Atomic
             {
             Name = GnuPlot0
-            Ports = 3 ; 0
+            Ports = 2 ; 0
             Path = sinks/gnuplot.h
             Description = Plot input signal using GnuPlot
             Graphic
@@ -57,9 +57,9 @@ Coupled
                 {
                 Inputs = Str; %Inputs ; Number of inputs
                 Format = Str; set xrange [0:%tf] @ set grid @ set title 'Plot' ; General Formatting (use @ as line break)
-                Format1 = Str; with circles title 'Cola' ; Formatting options for input 1
-                Format2 = Str; with impulses title 'Proc' ; Formatting options for input 2
-                Format3 = Str; with impulses title 'Fuente' ; Formatting options for input 3
+                Format1 = Str; with impulses title 'Proc' ; Formatting options for input 1
+                Format2 = Str; with impulses title 'Fuente' ; Formatting options for input 2
+                Format3 = Str;  ; Formatting options for input 3
                 Format4 = Str;  ; Formatting options for input 4
                 Format5 = Str;  ; Formatting options for input 5
                 }
@@ -82,104 +82,39 @@ Coupled
                 {
                 }
             }
-        Atomic
-            {
-            Name = Cola
-            Ports = 2 ; 1
-            Path = practica2/cola.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -60 ; 1020
-                Dimension = 1620 ; 675
-                Direction = Right
-                Color = 15
-                Icon = None
-                }
-            Parameters
-                {
-                }
-            }
         Point
             {
-            ConectedLines = 3 ; 4 ; 5
+            ConectedLines = 2 ; 3 ; 4
             ConectedExtrems = Org ; Org ; Org
-            Position = 1800 ; 1350
-            }
-        Point
-            {
-            ConectedLines = 2 ; 6 ; 7
-            ConectedExtrems = Org ; Org ; Org
-            Position = 3525 ; 225
-            }
-        Point
-            {
-            ConectedLines = 1 ; 8 ; 9
-            ConectedExtrems = Org ; Org ; Org
-            Position = -525 ; 150
+            Position = 2235 ; -1575
             }
         Line
             {
-            Source = Cmp ;  4 ;  1 ; -1
-            Sink = Pnt ;  3 ; -1 ; 0
-            PointX = -240 ; -525 ; -525
-            PointY = 1200 ; 1200 ; 150
+            Source = Cmp ;  2 ;  2 ; -1
+            Sink = Cmp ;  3 ;  1 ; 0
+            PointX = 4860 ; 3150 ; 3150
+            PointY = 150 ; 150 ; 0
             }
         Line
             {
-            Source = Cmp ;  4 ;  2 ; -1
-            Sink = Pnt ;  2 ; -1 ; 0
-            PointX = -240 ; -240 ; 3525 ; 3525
-            PointY = 1500 ; 2475 ; 2475 ; 225
-            }
-        Line
-            {
-            Source = Cmp ;  4 ;  1 ; 0
+            Source = Cmp ;  1 ;  1 ; 0
             Sink = Pnt ;  1 ; -1 ; 0
-            PointX = 1725 ; 1725 ; 1800
-            PointY = 1350 ; 1350 ; 1350
+            PointX = -525 ; 2235 ; 2235
+            PointY = -2250 ; -2250 ; -1575
             }
         Line
             {
             Source = Cmp ;  2 ;  1 ; -1
             Sink = Pnt ;  1 ; -1 ; 0
-            PointX = 4860 ; 4860 ; 1800 ; 1800
-            PointY = -150 ; -1050 ; -1050 ; 1350
+            PointX = 4860 ; 4860 ; 2235
+            PointY = -150 ; -1575 ; -1575
             }
         Line
             {
             Source = Pnt ;  1 ; -1 ; 0
             Sink = Cmp ;  3 ;  1 ; -1
-            PointX = 1800 ; 2100 ; 2100 ; 2235
-            PointY = 1350 ; 1350 ; 0 ; 0
-            }
-        Line
-            {
-            Source = Cmp ;  2 ;  2 ; -1
-            Sink = Pnt ;  2 ; -1 ; 0
-            PointX = 4860 ; 3525 ; 3525
-            PointY = 0 ; 0 ; 225
-            }
-        Line
-            {
-            Source = Pnt ;  2 ; -1 ; 0
-            Sink = Cmp ;  3 ;  1 ; 0
-            PointX = 3525 ; 3525 ; 3150
-            PointY = 225 ; 0 ; 0
-            }
-        Line
-            {
-            Source = Cmp ;  2 ;  3 ; -1
-            Sink = Pnt ;  3 ; -1 ; 0
-            PointX = 4860 ; -525 ; -525
-            PointY = 225 ; 150 ; 150
-            }
-        Line
-            {
-            Source = Pnt ;  3 ; -1 ; 0
-            Sink = Cmp ;  1 ;  1 ; 0
-            PointX = -525 ; -525 ; -525
-            PointY = 150 ; -2250 ; -2250
+            PointX = 2235 ; 2235 ; 2235
+            PointY = -1575 ; 0 ; 0
             }
         }
     }
