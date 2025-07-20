@@ -49,8 +49,8 @@ end ejemplo1;
 
   model checkValve
   extends DSFLib.Hydraulics.Interfaces.TwoPort;
-  parameter Real Ron(unit = "Pa.s/m3") = 1e-6 "Resistencia hidráulica";
-  parameter Real Roff(unit = "Pa.s/m3") = 1e12 "Resistencia hidráulica";
+  parameter Real Ron(unit = "Pa.s/m3") = 10^(-6) "Resistencia hidráulica";
+  parameter Real Roff(unit = "Pa.s/m3") = 10^(12) "Resistencia hidráulica";
   equation
   p = if q>0 then Ron*q else Roff*q;
   annotation(
@@ -147,7 +147,7 @@ end aspirantImpelent;
   end ejemplo3;
 
   model SistemaCompleto
-  DSFLib.MultiDomain.ElectroMechanical.Components.DCMotor dCMotor(R = 0.1, L = 10e-3)  annotation(
+  DSFLib.MultiDomain.ElectroMechanical.Components.DCMotor dCMotor(R = 0.1, L = 10^(-3))  annotation(
       Placement(transformation(origin = {-72, -16}, extent = {{-14, -14}, {14, 14}})));
   aspirantImpelent aspirantImpelent1 annotation(
       Placement(transformation(origin = {-10, -18}, extent = {{-16, -16}, {16, 16}})));
@@ -155,7 +155,7 @@ end aspirantImpelent;
       Placement(transformation(origin = {-22, -60}, extent = {{-10, -10}, {10, 10}})));
   DSFLib.Hydraulics.Components.Tank tank annotation(
       Placement(transformation(origin = {22, 36}, extent = {{-10, -10}, {10, 10}})));
-  DSFLib.Hydraulics.Components.Valve valve(RH = 10e7)  annotation(
+  DSFLib.Hydraulics.Components.Valve valve(RH = 10^7)  annotation(
       Placement(transformation(origin = {62, 26}, extent = {{-10, -10}, {10, 10}})));
   DSFLib.Hydraulics.Components.Column column(H = 1)  annotation(
       Placement(transformation(origin = {-6, 16}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
