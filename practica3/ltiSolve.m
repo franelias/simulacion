@@ -10,7 +10,7 @@ function [t,x]=ltiSolve(A,B,u,x0,t)
 endfunction
 
 
-# [t,x] = ltiSolve([0 1; -1 -1], [0;1], 1, [0; 0], [0:10])
+# [t,x] = ltiSolve([0 1; -1 -1], [0;1], 1, [0; 0], [0:0.5:10])
 
 # masares con ltiSolve
 # [t2,x2] = ltiSolve([0 1; -k/m -b/m], [0; F(t)/m], 1, [0;0], [0:10])

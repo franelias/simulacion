@@ -1,7 +1,6 @@
 function [t,x,aches]=ej10(reltol, abstol)
-  #[t,x,aches] = rk23(@masares_base, [0;0], 0, 10, reltol, abstol)
-  [t,x,aches] = traprulevs(@masares_base, [0;0], 0, 100, reltol, abstol)
-  plot(t,x,t,aches)
+  #[t,x,aches] = rk23(@masares_base, [0;0], 0, 50, reltol, abstol)
+  [t,x,aches] = traprulevs(@masares_base, [0;0], 0, 50, reltol, abstol)
 endfunction
 
 # con rk23:
